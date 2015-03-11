@@ -1,0 +1,38 @@
+Jane
+-student 25 years old
+-physically active since childhood
+-Workout: 3 times a week for 1.5 hours
+-Fitness goals: "Get even more fit"
+
+Jane is a busy person. She is working part time as a cashier to pay for her school. She would love to work out more, but her tight time schedule does not allow that. With that in mind she wants her CatBit application to be simple, easy to set up. She hates when an app eats up her free time.
+
+She started with gymnastics and ballroom dancing when she was 4 years old and has been doing many different sports ever since. She learned the rules of physical exercise from her father, a former olympic contender in water polo.
+
+Her goals are nothing like "lose weight", because she understands that weight is just a number that does not tell much about the overall health of a person. Her main goal is therefore simple: "To get even more fit."
+
+She is goal oriented and loves fun. She would definitely enjoy having an goal managing application, where goals are fun and entertaining. For instance "The Forest Gump Run" goal or "To Walk Around The Earth" goal.
+----------------------------------------------------------------------------
+John
+-programmer 35 years old
+-not too physically active
+-lives with parents
+-overweight and lazy
+-Enjoys computer game, mainly MMORPGS, comics and TV series
+
+John is not a sporty type by any means. Apart from foosball every Friday he does not do any sports.
+
+Recently he decided to change his life. He is fed up with his mom making fun of his fatness and inability to get a girlfriend. He walks everyday and goes to gym 2 times per week and he loves to brag about it. He shares workout photos all over instagram, snapchat, twitter, facebook, google+ so that all of his friends know that he is gonna get fit.
+
+At the moment, he is not using any fitness tracking application and it is because he gets scared everytime he is asked to enter his weight, height. What is more he gets demotivated everytime he sees his weight or BMI on the main screen.
+
+He likes the idea of application with facts about the number of steps he walks. "It will give me ideas for facebook posts", he says. He loves the idea of sharing his achievements on social networks. "It would be cool if I could get my WOW guild work on "The Moonwalk" goal together, we would be the first to complete it", he adds.
+----------------------------------------------------------------------------
+Daniel Abbee
+- student 25
+- loves adventure
+- enjoys parties, nightlife and drinking
+- volleyball is his passion
+
+Daniel has been born and raised in Salvador, Brazil, the biggest party place in America. He is now studying as an exchange student at K State and is having a great time.
+
+He spends his nights in clubs and house parties. He and his roommates got probably six warnings from the Department of Housing and Dining services for throwing parties at his place in Jardine apartments.
