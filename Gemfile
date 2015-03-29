@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # fitgem
 gem 'fitgem'
 
+#omniauth
+gem 'omniauth-fitbit'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
