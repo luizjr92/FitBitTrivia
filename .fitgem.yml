@@ -1,0 +1,4 @@
+auth:
+  consumer_key: "c055b4c942934b0f9c1755f17ae89df5"
+  consumer_secret: "9a89c35e8c1b40e6928bf2d1a92e0de5"
+  ssl: true

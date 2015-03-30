@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # fitgem
 gem 'fitgem'
 
+#gem 'i18n', '~> 0.7.0'
+
 #omniauth
 gem 'omniauth-fitbit'
 
