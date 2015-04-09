@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
   get 'main/index'
 
   resources :goals
-
-  get 'welcome/index'
 
   root 'welcome#index'
 
