@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails FitBitTrivia: development" uuid="f79f93cb-a461-4866-891a-36bc8fa8eccf">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails FitBitTrivia: test" uuid="a0ec2974-8c18-4986-8f38-d8ba513c1476">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

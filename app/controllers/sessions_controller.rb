@@ -1,34 +1,32 @@
-class SessionsController < ApplicationController
+  class SessionsController < ApplicationController
+
   def new
     redirect_to '/auth/fitbit/'
   end
 
   def create
+
+    #Build authorization and authenticate
     auth_hash = request.env['omniauth.auth']
     token = auth_hash['credentials']['token']
     secret = auth_hash['credentials']['secret']
 
-
     $client = Fitgem::Client.new(
-      :consumer_key => 'c055b4c942934b0f9c1755f17ae89df5',
-      :consumer_secret => '9a89c35e8c1b40e6928bf2d1a92e0de5',
-      :token => token,
-      :secret => secret
+        :consumer_key => 'c055b4c942934b0f9c1755f17ae89df5',
+        :consumer_secret => '9a89c35e8c1b40e6928bf2d1a92e0de5',
+        :token => token,
+        :secret => secret
     )
 
-    @authorization = Authorization.find_by_uid(auth_hash["uid"])
-    if @authorization
-      render :text => "Welcome #{@authorization.user.name}!"
+    #Create or retrieve User in database
+    $user = User.find_by_uid(auth_hash['uid'])
+    if $user.nil?
+      $user = User.new(:fullName => $client.user_info['user']['fullName'], :uid => auth_hash['uid'])
+      $user.save
     else
-      puts ($client.user_info['user'])['fullName']
-
-=begin
-      user = User.new :name => client.user_info['fullName']
-      user.authorizations.build :uid => auth_hash["uid"]
-      # user.save
-
-      render :text => "Hi #{user.name}!"
-=end
+      if $user.fullName != $client.user_info['user']['fullName']
+        $user.update(:fullName => $client.user_info['user']['fullName'])
+      end
     end
 
   end
@@ -38,7 +36,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
     render :text => "You've logged out!"
   end
 end

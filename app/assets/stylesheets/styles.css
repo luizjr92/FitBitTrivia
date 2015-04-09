@@ -11,9 +11,34 @@ p{
 }
 
 td{
-    text-align:center;
+    text-align: left;
+    vertical-align: top;
 }
 
 img{
     height:auto;
+}
+
+.progress {
+    width: 100%;
+    height: 7px;
+}
+
+.progress-wrap {
+    background: #080;
+    margin: 0;
+    border: solid 1px;
+    overflow: hidden;
+    position: relative;
+    .progress-bar {
+        background: #000;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.subtitle {
+    font-size: 10px;
+
 }
