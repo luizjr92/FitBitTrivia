@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user_goals/create'
+
   get 'welcome/index'
   get 'main/index'
 

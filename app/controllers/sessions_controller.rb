@@ -38,5 +38,6 @@
   def destroy
     $user = nil
     $client = nil
+    redirect_to root_path
   end
 end
