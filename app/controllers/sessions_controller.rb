@@ -36,6 +36,8 @@
   end
 
   def destroy
-    render :text => "You've logged out!"
+    $user = nil
+    $client = nil
+    redirect_to root_path
   end
 end

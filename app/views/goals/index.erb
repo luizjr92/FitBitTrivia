@@ -1,15 +1,13 @@
-<h1>Listing goals</h1>
+<div data-role="header">
+  <h1>Goals List</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
-
-  <% @goals.each do |goal| %>
-      <tr>
-        <td><%= goal.title %></td>
-        <td><%= goal.description %></td>
-      </tr>
-  <% end %>
-</table>
+<div data-role="main" class="ui-content">
+  <ul data-role="listview">
+    <% @goals.each do |goal| %>
+        <li data-icon="plus">
+          <%= link_to goal.title, goal_path(goal.id) %></li>
+    <% end %>
+  </ul>
+</div>
+  <a href="../../main/index" class="ui-btn ui-shadow ui-icon-back ui-btn-icon-left">Back</a>

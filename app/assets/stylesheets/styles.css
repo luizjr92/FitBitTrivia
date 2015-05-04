@@ -24,21 +24,16 @@ img{
     height: 7px;
 }
 
-.progress-wrap {
-    background: #080;
-    margin: 0;
-    border: solid 1px;
-    overflow: hidden;
-    position: relative;
-    .progress-bar {
-        background: #000;
-        left: 0;
-        position: absolute;
-        top: 0;
-    }
-}
-
 .subtitle {
     font-size: 10px;
 
+}
+
+.ui-progressbar {
+    height: 10px;
+}
+
+.ui-widget-header {
+    border: 1px solid #008800;
+    background: #008800;
 }
