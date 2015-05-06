@@ -1,8 +1,8 @@
 <body>
 <div data-role="page" id="mainPage">
   <div data-role="main" class="ui-content">
-    <h4>Hello, <%= $client.user_info['user']['fullName'] %>!</h4>
-    <img src="<%= $client.user_info['user']['avatar']  %>" width="50%" />
+    <h4>Hello, <%= $user.fullName %>!</h4>
+    <img src="<%= $user.avatar  %>" width="50%" />
     <br/>
     <div data-role="collapsible" data-mini="true">
       <h1><%= $client.activities_on_date(Date.current)['summary']['steps'] %> steps today! View more...</h1>
@@ -21,34 +21,35 @@
     <div data-role="main" class="ui-content" style="text-align: center">
       <a href="../../goals/" class="ui-btn ui-icon-plus ui-btn-icon-right">Add Goals</a>
       <% @activeGoalsList.each do |userGoal| %>
-          <div align="center" class="ui-btn ui-icon-minus ui-btn-icon-right">
-              <table>
-                <tr>
-                  <td><%= image_tag(userGoal.goal.image, width: 100) %></td>
-                  <td>
-                      <table>
-                        <tr>
-                          <td class="ui-title"><%= userGoal.goal.title %></td>
-                        </tr>
-                        <tr>
-                          <td class="subtitle">Start Date: <%= userGoal.created_at.to_date %></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div id="progressbar"></div>
-                            <script>
-                                $( "#progressbar" ).progressbar({
-                                    value: <%=
-                                        ((userGoal.steps / userGoal.goal.stepsNeeded)*100).to_int
-                                    %>
-                                });
-                            </script>
-                          </td>
-                        </tr>
-                      </table>
-                  </td>
-                </tr>
-              </table>
+          <div align="center" class="ui-btn">
+              <%= link_to '', { controller: 'user_goals' , action: 'show', id: userGoal.id }, {class: "ui-icon-minus ui-btn-icon-right"} %>
+                  <table>
+                    <tr>
+                      <td><%= image_tag(userGoal.goal.image, width: 100) %></td>
+                      <td>
+                          <table>
+                            <tr>
+                              <td class="ui-title"><%= userGoal.goal.title %></td>
+                            </tr>
+                            <tr>
+                              <td class="subtitle">Start Date: <%= userGoal.created_at.to_date %></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div id="progressbar<%= userGoal.object_id %>"></div>
+                                <script>
+                                    $( "#progressbar<%= userGoal.object_id %>" ).progressbar({
+                                        value: <%=
+                                            ((userGoal.steps.to_f / userGoal.goal.stepsNeeded.to_f )*100).to_i
+                                        %>
+                                    });
+                                </script>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                  </table>
           </div>
       <% end %>
     </div>
