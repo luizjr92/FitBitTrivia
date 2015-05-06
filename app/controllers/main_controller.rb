@@ -21,17 +21,18 @@ class MainController < ApplicationController
     end
 
     @activeUserGoals.each do |userGoal|
-      stepsArray = $client.data_by_time_range('/activities/log/steps', {:base_date => userGoal.created_at.to_date, :end_date => Date.current})['activities-log-steps']
-      steps = 0
-      for i in 0..(stepsArray.length-1)
-        steps += stepsArray[i]['value'].to_i
-      end
-      userGoal.update(:steps => steps)
       if userGoal.finishDate.nil?
         if userGoal.steps > userGoal.goal.stepsNeeded
           userGoal.update(:finishDate => DateTime.now)
           @achievementsList.push(userGoal)
         else
+          stepsArray = $client.data_by_time_range('/activities/log/steps',
+                      {:base_date => userGoal.created_at.to_date, :end_date => Date.current})['activities-log-steps']
+          steps = 0
+          for i in 0..(stepsArray.length-1)
+            steps += stepsArray[i]['value'].to_i
+          end
+          userGoal.update(:steps => steps)
           @activeGoalsList.push(userGoal)
         end
       else
@@ -40,4 +41,4 @@ class MainController < ApplicationController
     end
 
   end
-  end
+end
