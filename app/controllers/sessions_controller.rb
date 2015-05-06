@@ -21,11 +21,14 @@
     #Create or retrieve User in database
     $user = User.find_by_uid(auth_hash['uid'])
     if $user.nil?
-      $user = User.new(:fullName => $client.user_info['user']['fullName'], :uid => auth_hash['uid'])
+      $user = User.new(:fullName => $client.user_info['user']['fullName'], :uid => auth_hash['uid'], :avatar => $client['user']['avatar'])
       $user.save
     else
       if $user.fullName != $client.user_info['user']['fullName']
         $user.update(:fullName => $client.user_info['user']['fullName'])
+      end
+      if $user.avatar != $client.user_info['user']['avatar']
+        $user.update(:avatar => $client.user_info['user']['avatar'])
       end
     end
 
