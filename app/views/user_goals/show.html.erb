@@ -1,0 +1,28 @@
+<div data-role="header">
+  <h1>Goal details</h1>
+</div>
+<div data-role="main" class="ui-content">
+  <div style="text-align:center">
+    <h2> <%= @userGoal.goal.title %> </h2>
+    <%= image_tag(@userGoal.goal.image, width: 200) %>
+    <br />
+    <p> <%= @userGoal.goal.description %> </p>
+    <p>Start Date: <%= @userGoal.created_at.to_date %></p>
+    <p>Steps: <%= @userGoal.steps %> / <%= @userGoal.goal.stepsNeeded %></p>
+    <div id="progressbar<%= @userGoal.object_id %>"></div>
+    <script>
+        $( "#progressbar<%= @userGoal.object_id %>" ).progressbar({
+            value: <%=
+                        ((@userGoal.steps.to_f / @userGoal.goal.stepsNeeded.to_f )*100).to_i
+                   %>
+        });
+    </script>
+    <a href="../main/index" class="ui-btn ui-icon-back ui-btn-icon-right">Return</a>
+    <%= link_to 'Give up!',
+                user_goal_path(@userGoal.id),
+                :method => :delete,
+                class: "ui-btn ui-icon-delete ui-btn-icon-right",
+                data: {confirm: "Are you sure?"}
+                 %>
+  </div>
+</div>
