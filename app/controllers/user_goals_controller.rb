@@ -4,4 +4,14 @@ class UserGoalsController < ApplicationController
     $user.goals.push(goal)
     redirect_to '/main/index'
   end
+
+  def show
+    @userGoal = UserGoal.find(params[:id])
+  end
+
+  def destroy
+    userGoal = UserGoal.find(params[:id])
+    userGoal.delete
+    redirect_to '/main/index'
+  end
 end
