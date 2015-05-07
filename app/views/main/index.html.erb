@@ -5,13 +5,9 @@
     <img src="<%= $user.avatar  %>" width="50%" />
     <br/>
     <div data-role="collapsible" data-mini="true">
-      <h1><%= $client.activities_on_date(Date.current)['summary']['steps'] %> steps today! View more...</h1>
-      <p><%= $client.activities_on_date(Date.current)['summary']['steps'] %> steps today!<br/>
-        <% $stepsWeek = $client.data_by_time_range('/activities/log/steps', {:base_date => Date.current, :period => '7d'})['activities-log-steps'] %>
-        <% $stepstotal = 0
-           for i in 0..6
-             $stepstotal += $stepsWeek[i]['value'].to_i
-           end %><%= $stepstotal%> steps this week!
+      <h1>123456 steps today! View more...</h1>
+      <p>123456 steps today!<br/>
+        1234567 steps this week!
       </p>
     </div>
     <div data-role="header">
