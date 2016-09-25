@@ -8,24 +8,26 @@
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
         <!-- Include the jQuery Mobile library -->
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        
+
         <link rel="stylesheet" type="text/css" href="styles.css"/> -->
-        
+
     </head>
     <body>
         <div data-role="page" id="mainPage">
-            <div data-role="main" class="ui-content">
-                <h4>Hello, user!</h4>
+            <div data-role="main" class="ui-content mobile">
+                <h4>Hello, Jon Doe!</h4>
                 <img src="images/avatar.png" width="50%" />
                 <br/>
                 <div data-role="collapsible" data-mini="true">
                     <h1>5863 steps today! View more...</h1>
-                    <p>5863 steps today!<br/>
-                    29539 steps this week!
+                    <p>5863 steps today<br/>
+                    4.4km walked today<br/>
+                    29539 steps this week<br/>
+                    22.4km walked this week<br/>
                     </p>
                 </div>
                 <div data-role="header">
-                    <h1> Goals 
+                    <h1> Goals
                     </h1>
                 </div>
                 <div data-role="main" class="ui-content">
@@ -42,19 +44,19 @@
                     <br />
                 </div>
             </div>
-            
+
             <div data-role="footer" style="text-align:center;">
                 <a href="index.html" rel="external" class="ui-btn ui-corner-all ui-shadow ui-icon-power ui-btn-icon-left">Logout</a>
             </div>
         </div>
-        
+
         <div data-role="page" data-dialog="true" id="addGoals">
           <div data-role="header">
             <h1>Goals List</h1>
           </div>
 
           <div data-role="main" class="ui-content">
-            <ul data-role="listview"> 
+            <ul data-role="listview">
               <li data-icon="plus"><a href="#goalDetails">The Moonwalk</a></li>
               <li data-icon="plus"><a href="#goalDetails">Around the Earth</a></li>
               <li data-icon="plus"><a href="#goalDetails">Millionaire Challenge</a></li>
@@ -64,7 +66,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div data-role="page" data-dialog="true" id="goalDetails">
           <div data-role="header">
             <h1>Goal details</h1>
@@ -74,9 +76,9 @@
                 <h2> Goal Name </h2>
                 <img src="images/goalLogo.png"/>
                 <br />
-                <p>It takes about 20 millions steps to walk around the world, several years commitment as well as determination, 
+                <p>It takes about 20 millions steps to walk around the world, several years commitment as well as determination,
                 stamina, and a state of mind that few of us can imagine.</p>
-                <a href="#" data-rel="back" class="ui-btn ui-icon-check ui-btn-icon-right">Challenge Accepted!</a>
+                <a href="#mainpage" data-rel="back" class="ui-btn ui-icon-check ui-btn-icon-right">Challenge Accepted!</a>
                 <a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-right">No, thanks.</a>
             </div>
           </div>
